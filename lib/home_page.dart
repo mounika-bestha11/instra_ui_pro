@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:instraui/pages/account.dart';
+
+import 'package:instraui/account.dart';
+//import 'package:instraui/pages/account.dart';
 import 'package:instraui/pages/home.dart';
 import 'package:instraui/pages/reels.dart';
 import 'package:instraui/pages/search.dart';
@@ -32,9 +32,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var type;
     return Scaffold(
-      appBar: AppBar(
-          // title: Text('HomePage'),
-          ),
+      // appBar: AppBar(
+      // title: Text('HomePage'),
+      //  ),
       body: _children[_selectedBox],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedBox,

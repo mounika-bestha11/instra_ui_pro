@@ -1,6 +1,5 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
+import 'package:instraui/util/explore_grid.dart';
 
 class UserSearch extends StatelessWidget {
   const UserSearch({Key? key}) : super(key: key);
@@ -13,15 +12,29 @@ class UserSearch extends StatelessWidget {
         title: ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Container(
-              child: Row(
-                children: [
-                  Icon(Icons.search),
-                  Container(color: Colors.black, child: Text('Search')),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.all(
+                  8.0,
+                ),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.search,
+                      color: Colors.blue,
+                    ),
+                    Container(
+                        child: Text(
+                      'Search',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    )),
+                  ],
+                ),
               ),
             )),
       ),
-      body: Text('search'),
+      body: ExploreGride(),
     );
   }
 }
