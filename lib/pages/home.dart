@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:instraui/util/bubble_stories.dart';
 import 'package:instraui/util/user_posts.dart';
 
@@ -21,7 +20,69 @@ class UserHome extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        //backgroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('INSTAGRAM',
+                style: TextStyle(
+                  color: Colors.black,
+                )),
+            Row(
+              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                //  Text("FlutLab is on your service!"),
+                Icon(
+                  Icons.add,
+                  color: Colors.black,
+                ),
+                Icon(
+                  Icons.favorite,
+                  color: Colors.black,
+                ),
+                Icon(
+                  Icons.share,
+                  color: Colors.black,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              height: 130,
+              /*child: ListView(scrollDirection: Axis.horizontal, children: [
+                BubbleStories(
+                  text: 'mounika',
+                ),
+                BubbleStories(text: 'nandu'),
+                BubbleStories(text: 'manoj'),
+                BubbleStories(text: 'D'),
+                BubbleStories(text: 'E')
+              ],
+              ),*/
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: people.length,
+                  itemBuilder: ((context, index) {
+                    return BubbleStories(
+                      text: people[index],
+                    );
+                  })),
+            ),
+            UserPosts(text: 'mounika'),
+            UserPosts(text: 'nandu'),
+          ],
+        ),
+      ),
+    );
+    /*Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
         elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -34,46 +95,43 @@ class UserHome extends StatelessWidget {
             ),
             Row(
               children: [
-                GestureDetector(
-                  onTap: () {},
-                ),
                 Icon(Icons.add),
                 Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Icon(Icons.favorite),
+                  padding: const EdgeInsets.all(24),
+                  child: GestureDetector(
+                    onTap: (() {
+                      debugPrint('you have to print favorite');
+                    }),
+                    child: Icon(
+                      Icons.favorite,
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
-                Icon(Icons.share),
+                Icon(
+                  Icons.share,
+                  color: Colors.black,
+                ),
               ],
             ),
           ],
         ),
       ),
-      body: Column(children: <Widget>[
-        Row(
-          children: [
-            Container(
-              // color: Colors.grey[400],
-              width: 40,
-              height: 40,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.grey[400],
-              ),
+      body: SingleChildScrollView(
+        child: Column(children: <Widget>[
+          Row(),
+          Container(
+            height: 130,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: people.length,
+              itemBuilder: ((context, index) {
+                return BubbleStories(
+                  text: people[index],
+                );
+              }),
             ),
-          ],
-        ),
-        Container(
-          height: 130,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: people.length,
-            itemBuilder: ((context, index) {
-              return BubbleStories(
-                text: people[index],
-              );
-            }),
-          ),
-          /* children: [
+            /* children: [
             BubbleStories(
               text: 'mounika',
             ),
@@ -90,15 +148,20 @@ class UserHome extends StatelessWidget {
               text: 'E',
             ),
           ],*/
-        ),
-        Expanded(
-          child: ListView.builder(
-              itemCount: people.length,
-              itemBuilder: ((context, index) {
-                return UserPosts(name: people[index]);
-              })),
-        ),
-      ]),
-    );
+          ),
+          Expanded(
+            child: ListView.builder(
+                itemCount: people.length,
+                itemBuilder: ((context, index) {
+                  return BubbleStories(
+                    text: people[index],
+                  );
+                })),
+          ),
+          UserPosts(text: 'mounika'),
+          UserPosts(text: 'nandu'),
+        ]),
+      ),
+    );*/
   }
 }

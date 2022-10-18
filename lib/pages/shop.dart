@@ -12,30 +12,34 @@ class UserShop extends StatelessWidget {
         title: ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: Container(
-            child: Row(
-              children: [
-                Icon(
-                  Icons.search,
-                  color: Colors.black,
-                ),
-                Container(
-                  child: Text(
-                    'Search',
-                    style: TextStyle(
-                      color: Colors.grey[400],
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.search,
+                    color: Colors.black,
+                  ),
+                  Container(
+                    child: Text(
+                      'Search',
+                      style: TextStyle(
+                        color: Colors.grey[400],
+                      ),
                     ),
                   ),
-                ),
-                /* title = Row(
-                  children: [
-                    Container(child: Text('search')),
-                  ],
-                ),*/
-              ],
+                  /* title = Row(
+                    children: [
+                      Container(child: Text('search')),
+                    ],
+                  ),*/
+                ],
+              ),
             ),
           ),
         ),
       ),
+      body: ShopGride(),
     );
   }
 }

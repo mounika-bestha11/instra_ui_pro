@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
       // Application name
       //title: 'Flutter Stateful Clicker Counter',
       theme: ThemeData(
-        // Application theme data, you can set the colors for the application as
-        // you want
-        primarySwatch: Colors.blue,
-      ),
+          // Application theme data, you can set the colors for the application as
+          // you want
+          //primarySwatch: Colors.blue,
+          ),
       home: HomePage(),
     );
   }
